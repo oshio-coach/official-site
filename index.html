@@ -1,240 +1,343 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shiori Official</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Shiori｜人生って、もっと楽しくていい。</title>
+  <meta name="description" content="人の目が気になる、自己否定しやすい、「こんな私には無理」と思っている方へ。心を整理するカードセッションと、心を軽くするヒントをお届けします。" />
+
   <style>
-    body {
+    :root {
+      --cream: #f8f3ea;
+      --white: #fffdf8;
+      --brown: #5f4a3d;
+      --light-brown: #9b7b65;
+      --line: #e8ddd0;
+      --accent: #b58b6a;
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
-      font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
-      background: #faf3e8;
-      color: #3f342c;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+      background: var(--cream);
+      color: var(--brown);
       line-height: 1.9;
+      letter-spacing: 0.04em;
     }
 
-    header {
-      padding: 90px 24px 70px;
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .hero {
+      min-height: 100vh;
+      background:
+        linear-gradient(rgba(70, 50, 35, 0.28), rgba(70, 50, 35, 0.28)),
+        url("hero.jpg") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      background: linear-gradient(180deg, #fff8ef 0%, #faf3e8 100%);
+      padding: 32px 20px;
+      color: #fffdf8;
     }
 
-    .site-name {
-      font-size: 14px;
-      letter-spacing: 0.18em;
-      color: #9b7a55;
-      margin-bottom: 28px;
+    .hero-inner {
+      max-width: 720px;
     }
 
-    h1 {
-      font-size: 30px;
-      line-height: 1.6;
-      margin: 0 0 24px;
-      font-weight: 600;
+    .hero h1 {
+      font-size: clamp(34px, 8vw, 64px);
+      line-height: 1.35;
+      font-weight: 500;
+      margin-bottom: 24px;
     }
 
-    .lead {
-      font-size: 16px;
-      margin-bottom: 36px;
+    .hero p {
+      font-size: clamp(16px, 4vw, 22px);
+      margin-bottom: 34px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-items: center;
     }
 
     .button {
-      display: inline-block;
-      padding: 15px 34px;
-      background: #c9945b;
-      color: #fff;
-      text-decoration: none;
+      width: min(100%, 320px);
+      padding: 15px 24px;
       border-radius: 999px;
-      font-weight: bold;
-      box-shadow: 0 8px 20px rgba(150, 105, 60, 0.18);
+      background: rgba(255, 253, 248, 0.92);
+      color: var(--brown);
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .button.sub {
+      background: rgba(95, 74, 61, 0.78);
+      color: #fffdf8;
+      border: 1px solid rgba(255, 255, 255, 0.55);
     }
 
     section {
-      max-width: 820px;
+      padding: 76px 20px;
+    }
+
+    .container {
+      max-width: 960px;
       margin: 0 auto;
-      padding: 64px 24px;
     }
 
-    h2 {
-      font-size: 24px;
+    .section-title {
+      font-size: 28px;
+      font-weight: 500;
       text-align: center;
-      margin-bottom: 34px;
-      font-weight: 600;
+      margin-bottom: 36px;
+      line-height: 1.6;
     }
 
-    .box {
-      background: #fffaf3;
-      border-radius: 24px;
-      padding: 30px;
-      margin-bottom: 24px;
-      box-shadow: 0 6px 20px rgba(91, 67, 43, 0.06);
+    .lead {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 36px;
+      font-size: 16px;
     }
 
-    .worries p {
-      margin: 12px 0;
-      padding-left: 1em;
-      text-indent: -1em;
+    .card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 30px 24px;
+      box-shadow: 0 12px 36px rgba(95, 74, 61, 0.06);
     }
 
-    .menu {
+    .worries {
+      display: grid;
+      gap: 14px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .worries li {
+      list-style: none;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px 18px;
+    }
+
+    .two-column {
+      display: grid;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .profile-img {
+      border-radius: 32px;
+      overflow: hidden;
+    }
+
+    .voice-list,
+    .hint-list {
       display: grid;
       gap: 18px;
     }
 
-    .menu a {
-      display: block;
-      background: #fffaf3;
-      padding: 20px;
-      border-radius: 20px;
-      text-decoration: none;
-      color: #3f342c;
-      box-shadow: 0 5px 16px rgba(91, 67, 43, 0.05);
+    .voice,
+    .hint {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 24px;
     }
 
-    .small {
-      font-size: 14px;
-      color: #7d6957;
+    .links {
+      display: grid;
+      gap: 16px;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .link-box {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 20px;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    .cta {
+      text-align: center;
+    }
+
+    .cta .button {
+      display: inline-block;
+      margin-top: 20px;
+      background: var(--accent);
+      color: #fffdf8;
     }
 
     footer {
+      padding: 40px 20px;
       text-align: center;
-      padding: 42px 20px;
-      background: #fff8ef;
       font-size: 13px;
-      color: #7d6957;
+      color: var(--light-brown);
     }
 
-    @media (max-width: 600px) {
-      header {
-        padding: 72px 22px 56px;
+    @media (min-width: 760px) {
+      .buttons {
+        flex-direction: row;
+        justify-content: center;
       }
 
-      h1 {
-        font-size: 26px;
+      .two-column {
+        grid-template-columns: 1fr 1fr;
       }
 
-      section {
-        padding: 52px 22px;
-      }
-
-      .box {
-        padding: 24px;
+      .voice-list,
+      .hint-list {
+        grid-template-columns: repeat(3, 1fr);
       }
     }
   </style>
 </head>
+
 <body>
 
-<header>
-  <div class="site-name">SHIORI OFFICIAL</div>
+  <header class="hero">
+    <div class="hero-inner">
+      <h1>人生って、<br>もっと楽しくていい。</h1>
+      <p>「こんな私には無理。」<br>そう思っているあなたへ。</p>
 
-  <h1>
-    人の目が<br>
-    気になってしまうあなたへ
-  </h1>
+      <div class="buttons">
+        <a class="button" href="#session">カードセッションについて見る</a>
+        <a class="button sub" href="#hints">心を軽くするヒント集</a>
+      </div>
+    </div>
+  </header>
 
-  <p class="lead">
-    なんとなく生きづらい毎日から、<br>
-    自分の気持ちを大切にできる私へ。
-  </p>
+  <main>
 
-  <a class="button" href="#menu">メニューを見る</a>
-</header>
+    <section id="worries">
+      <div class="container">
+        <h2 class="section-title">こんな毎日ではありませんか</h2>
+        <ul class="worries">
+          <li>人の目が気になって、やりたいことを我慢してしまう</li>
+          <li>本当は疲れているのに「大丈夫」と言ってしまう</li>
+          <li>失敗する前から「私には無理」と決めつけてしまう</li>
+          <li>自分の気持ちが分からなくなることがある</li>
+          <li>変わりたいのに、何から始めたらいいか分からない</li>
+        </ul>
+      </div>
+    </section>
 
-<section>
-  <h2>こんなお悩みはありませんか？</h2>
+    <section id="session">
+      <div class="container">
+        <div class="card">
+          <h2 class="section-title">心を整理する時間<br>カードセッション</h2>
+          <p class="lead">
+            カードを通して、今の気持ちや本音をやさしく見つめる時間です。
+            答えを押しつけるのではなく、あなたの中にある想いを一緒に整理していきます。
+          </p>
+          <div class="cta">
+            <p>「私、本当はどうしたいんだろう？」と思ったときに、安心して話せる場所として使ってください。</p>
+            <a class="button" href="#line">公式LINEから相談する</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <div class="box worries">
-    <p>・人の目が気になって、言いたいことが言えない</p>
-    <p>・相手に合わせすぎて、自分の気持ちが分からなくなる</p>
-    <p>・ちゃんとしているのに、なぜか心が疲れてしまう</p>
-    <p>・自己否定が止まらず、自分に自信が持てない</p>
-    <p>・「このままでいいのかな」と感じることがある</p>
-  </div>
-</section>
+    <section id="profile">
+      <div class="container two-column">
+        <div class="profile-img">
+          <img src="profile.jpg" alt="Shiori プロフィール写真">
+        </div>
+        <div>
+          <h2 class="section-title" style="text-align:left;">プロフィール</h2>
+          <p>
+            はじめまして、Shioriです。<br>
+            かつての私は、人の目を気にして、自分の気持ちよりも周りを優先していました。
+          </p>
+          <p>
+            でも、心の仕組みを学び、自分と向き合う時間を重ねる中で、
+            「人生って、もっと楽しくていい」と思えるようになりました。
+          </p>
+          <p>
+            今は、同じように生きづらさを抱える方が、自分らしく一歩踏み出せるようサポートしています。
+          </p>
+        </div>
+      </div>
+    </section>
 
-<section>
-  <h2>大切にしていること</h2>
+    <section id="voices">
+      <div class="container">
+        <h2 class="section-title">お客様の声</h2>
+        <div class="voice-list">
+          <div class="voice">自分の気持ちを言葉にできて、心が軽くなりました。</div>
+          <div class="voice">責められることなく話せて、安心できました。</div>
+          <div class="voice">小さな一歩を踏み出してみようと思えました。</div>
+        </div>
+      </div>
+    </section>
 
-  <div class="box">
-    <p>
-      無理にポジティブになるのではなく、
-      今のあなたの気持ちを大切にしながら、
-      少しずつ自分を理解していくこと。
-    </p>
-    <p>
-      心の仕組み・自己理解・コミュニケーションを通して、
-      「私のままで大丈夫」と思える毎日を育てていきます。
-    </p>
-  </div>
-</section>
+    <section id="hints">
+      <div class="container">
+        <h2 class="section-title">心を軽くするヒント集</h2>
+        <p class="lead">
+          人の目、自己否定、断れない、人に合わせすぎる。
+          そんな日々の悩みを少し軽くするヒントをまとめていきます。
+        </p>
 
-<section>
-  <h2>プロフィール</h2>
+        <div class="hint-list">
+          <div class="hint">
+            <h3>人の目が気になるとき</h3>
+            <p>まずは「私は今、緊張しているんだな」と気づくところから。</p>
+          </div>
+          <div class="hint">
+            <h3>自己否定してしまうとき</h3>
+            <p>できなかったことより、今日できた小さなことを見つけてみる。</p>
+          </div>
+          <div class="hint">
+            <h3>断れないとき</h3>
+            <p>すぐに答えず「少し考えてから返事します」と言っても大丈夫。</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <div class="box">
-    <p>
-      はじめまして、しおりです。
-    </p>
-    <p>
-      人の目が気になってしまう方、
-      なんとなく生きづらさを感じている方に向けて、
-      自分らしく人生を楽しむための講座やセッションを行っています。
-    </p>
-    <p>
-      過去の私自身も、人の目を気にしすぎたり、
-      自分の気持ちが分からなくなったりしながら過ごしてきました。
-    </p>
-    <p>
-      だからこそ、同じように悩む方が安心して立ち止まれる場所を作りたいと思っています。
-    </p>
-  </div>
-</section>
+    <section id="links">
+      <div class="container">
+        <h2 class="section-title">つながる場所</h2>
+        <div class="links">
+          <a class="link-box" href="#" target="_blank">Instagram</a>
+          <a class="link-box" href="#" target="_blank">stand.fm</a>
+          <a class="link-box" id="line" href="#" target="_blank">公式LINE</a>
+        </div>
+      </div>
+    </section>
 
-<section>
-  <h2>講座・セッション</h2>
+  </main>
 
-  <div class="box">
-    <p>
-      自己理解を深めながら、
-      人の目や自己否定に振り回されず、
-      自分の人生を少しずつ楽しめるようになるための講座を行っています。
-    </p>
-    <p class="small">
-      詳細ページは、これから順番に追加していきます。
-    </p>
-  </div>
-</section>
-
-<section id="menu">
-  <h2>メニュー</h2>
-
-  <div class="menu">
-    <a href="#">
-      Instagram
-      <div class="small">日々の発信はこちら</div>
-    </a>
-
-    <a href="#">
-      ストアカ講座
-      <div class="small">募集中の講座はこちら</div>
-    </a>
-
-    <a href="#">
-      LINE公式
-      <div class="small">ご相談・お知らせはこちら</div>
-    </a>
-
-    <a href="#">
-      お悩み辞典
-      <div class="small">準備中：よくあるお悩みを検索できます</div>
-    </a>
-  </div>
-</section>
-
-<footer>
-  © 2026 Shiori Official
-</footer>
+  <footer>
+    <p>Shiori</p>
+    <p>人生って、もっと楽しくていい。</p>
+    <p>&copy; 2026 Shiori</p>
+  </footer>
 
 </body>
 </html>
