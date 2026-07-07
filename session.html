@@ -1,1 +1,393 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>カードセッション｜人生って、もっと楽しくていい。</title>
+  <meta name="description" content="人の目が気になる、自己否定してしまう、自分の気持ちが分からない方へ。心を整理するカードセッションのご案内です。">
 
+  <style>
+    :root {
+      --cream: #f8f3ea;
+      --white: #fffdf8;
+      --brown: #5f4a3d;
+      --light-brown: #9b7b65;
+      --line: #e8ddd0;
+      --accent: #b58b6a;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+      background: var(--cream);
+      color: var(--brown);
+      line-height: 1.9;
+      letter-spacing: 0.04em;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .hero {
+      padding: 96px 20px 72px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(34px, 8vw, 58px);
+      line-height: 1.4;
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      font-size: 17px;
+      color: var(--light-brown);
+    }
+
+    section {
+      padding: 64px 20px;
+    }
+
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 28px;
+      font-weight: 500;
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+
+    .lead {
+      max-width: 720px;
+      margin: 0 auto 32px;
+      text-align: center;
+      font-size: 16px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 30px 24px;
+      box-shadow: 0 12px 36px rgba(95, 74, 61, 0.06);
+    }
+
+    .list {
+      display: grid;
+      gap: 14px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .list li {
+      list-style: none;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px 18px;
+    }
+
+    .change-list {
+      display: grid;
+      gap: 22px;
+    }
+
+    .change {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: 26px;
+    }
+
+    .change h3 {
+      font-size: 19px;
+      margin-bottom: 14px;
+      font-weight: 500;
+    }
+
+    .before-after {
+      display: grid;
+      gap: 18px;
+    }
+
+    .label {
+      font-size: 13px;
+      color: var(--light-brown);
+      margin-bottom: 6px;
+    }
+
+    .flow {
+      display: grid;
+      gap: 16px;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .flow-item {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 20px;
+    }
+
+    .faq {
+      display: grid;
+      gap: 18px;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 24px;
+    }
+
+    .faq-item h3 {
+      font-size: 17px;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .cta {
+      text-align: center;
+    }
+
+    .button {
+      display: inline-block;
+      width: min(100%, 340px);
+      padding: 16px 24px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fffdf8;
+      font-weight: 500;
+      margin-top: 24px;
+    }
+
+    .back {
+      text-align: center;
+      padding: 40px 20px 20px;
+      color: var(--light-brown);
+      font-size: 14px;
+    }
+
+    footer {
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--light-brown);
+    }
+
+    @media (min-width: 760px) {
+      .before-after {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="hero">
+    <h1>人生って、<br>もっと楽しくていい。</h1>
+    <p>「こんな私には無理。」<br>そう思っているあなたへ。</p>
+  </header>
+
+  <main>
+
+    <section>
+      <div class="container">
+        <h2 class="section-title">こんなお悩みありませんか？</h2>
+        <ul class="list">
+          <li>人の目が気になって、自分の本音を言えない</li>
+          <li>つい自分を責めてしまう</li>
+          <li>本当はどうしたいのか分からない</li>
+          <li>頑張っているのに、毎日なんとなく苦しい</li>
+          <li>「こんな私には無理」と思ってしまう</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="card">
+          <h2 class="section-title">心を整理する<br>カードセッション</h2>
+          <p class="lead">
+            カードセッションは、カードを通して今の気持ちや本音をやさしく整理していく時間です。
+          </p>
+          <p>
+            答えを当てるものではなく、あなたの中にある想いや違和感に気づくためのきっかけとして使います。
+            うまく話そうとしなくても大丈夫です。
+            気持ちがまとまっていなくても大丈夫です。
+          </p>
+          <p>
+            あなたのペースを大切にしながら、一緒に心の中を整理していきます。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2 class="section-title">私が大切にしていること</h2>
+        <div class="card">
+          <p>
+            私は、あなたを無理に変えようとは思っていません。
+          </p>
+          <p>
+            どんな気持ちにも、ちゃんと理由があります。
+            人の目が気になることも、自分を責めてしまうことも、
+            それだけ一生懸命に生きてきた証だと思っています。
+          </p>
+          <p>
+            この時間では、否定せず、急がせず、あなたの中にある本音を一緒に見つけていきます。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2 class="section-title">お客様の変化</h2>
+
+        <div class="change-list">
+
+          <div class="change">
+            <h3>30代主婦 Sさん</h3>
+            <div class="before-after">
+              <div>
+                <p class="label">Before</p>
+                <p>自分が何者か分からず、人の顔色を見て過ごす日々。毎日「消えたい」と感じていました。</p>
+              </div>
+              <div>
+                <p class="label">After</p>
+                <p>自分のことが分かるようになり、他人にどう思われるか以外の基準で選べるようになりました。</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="change">
+            <h3>Kさん</h3>
+            <div class="before-after">
+              <div>
+                <p class="label">Before</p>
+                <p>毎日がつまらなく、やりたいことや人生の目標が分からない状態でした。</p>
+              </div>
+              <div>
+                <p class="label">After</p>
+                <p>やりたいことが見つかり、毎日が楽しくなりました。</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="change">
+            <h3>S・Kさん</h3>
+            <div class="before-after">
+              <div>
+                <p class="label">Before</p>
+                <p>周りからのアドバイスを否定されたように感じてしまうことがありました。</p>
+              </div>
+              <div>
+                <p class="label">After</p>
+                <p>アドバイスを前向きに受け取れるようになり、仕事も楽しく感じられるようになりました。</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="change">
+            <h3>Nさん</h3>
+            <div class="before-after">
+              <div>
+                <p class="label">Before</p>
+                <p>親子や家族とのコミュニケーションに悩み、イライラしてしまうことがありました。</p>
+              </div>
+              <div>
+                <p class="label">After</p>
+                <p>子どもや家族との関わり方が変わり、家族との時間を幸せに感じられるようになりました。</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2 class="section-title">セッションの流れ</h2>
+        <div class="flow">
+          <div class="flow-item">1. Googleフォームからお申し込み</div>
+          <div class="flow-item">2. 日程調整のご連絡</div>
+          <div class="flow-item">3. Google MeetのURLをお送りします</div>
+          <div class="flow-item">4. オンラインでカードセッション</div>
+          <div class="flow-item">5. 60〜90分ほどで終了</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2 class="section-title">よくある質問</h2>
+
+        <div class="faq">
+
+          <div class="faq-item">
+            <h3>Q. セッション時間はどれくらいですか？</h3>
+            <p>初回は60〜90分を予定しています。ゆっくりお話を伺いながら進めますので、お時間に余裕を持ってご参加ください。</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Q. オンラインですか？</h3>
+            <p>はい。Google Meetを使ったオンラインセッションです。ご自宅など、リラックスできる場所からご参加いただけます。</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Q. どんな人が受けていますか？</h3>
+            <p>「人の目が気になる」「自己否定してしまう」「自分の気持ちが分からない」「毎日なんとなく苦しい」と感じている方が多く受けられています。</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Q. 申し込み後の流れを教えてください。</h3>
+            <p>Googleフォームからお申し込みいただいた後、日程調整のご連絡をお送りします。日程が決まりましたら、Google MeetのURLをお送りします。</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Q. うまく話せるか不安です。</h3>
+            <p>大丈夫です。最初から上手に話そうとしなくても大丈夫ですし、気持ちがまとまっていなくても大丈夫です。あなたのペースを大切にしながら進めます。</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container cta">
+        <h2 class="section-title">少し話してみたいと思った方へ</h2>
+        <p class="lead">
+          申し込みフォームからご連絡ください。<br>
+          日程調整のご案内をお送りします。
+        </p>
+        <a class="button" href="#" target="_blank" rel="noopener">カードセッションに申し込む</a>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="back">
+    <a href="index.html">トップページへ戻る</a>
+  </div>
+
+  <footer>
+    <p>Shiori</p>
+    <p>人生って、もっと楽しくていい。</p>
+    <p>&copy; 2026 Shiori</p>
+  </footer>
+
+</body>
+</html>
