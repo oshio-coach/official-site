@@ -1,192 +1,217 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>カードセッション｜人生って、もっと楽しくていい。</title>
-  <meta name="description" content="人の目が気になる、自己否定してしまう、自分の気持ちが分からない方へ。心を整理するカードセッションのご案内です。">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>カードセッション｜Shiori</title>
+  <meta name="description" content="「こんな私には無理。」そう思っているあなたへ。カードを通して心を整理するセッションのご案内です。" />
 
   <style>
     :root {
-      --cream: #f8f3ea;
-      --white: #fffdf8;
-      --brown: #5f4a3d;
-      --light-brown: #9b7b65;
-      --line: #e8ddd0;
-      --accent: #b58b6a;
+      --white: #fcfbf8;
+      --true-white: #ffffff;
+      --text: #252525;
+      --soft-text: #6f6a64;
+      --line: #e7e2dc;
+      --orange: #d99a5b;
+      --orange-dark: #b9783f;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
-      background: var(--cream);
-      color: var(--brown);
-      line-height: 1.9;
-      letter-spacing: 0.04em;
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.95;
+      letter-spacing: 0.05em;
     }
 
     a { color: inherit; text-decoration: none; }
 
+    header {
+      padding: 28px 22px;
+      border-bottom: 1px solid var(--line);
+      background: var(--white);
+    }
+
+    .nav {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 15px;
+      letter-spacing: 0.16em;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: none;
+      gap: 24px;
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      font-weight: 600;
+    }
+
     .hero {
-      padding: 96px 20px 72px;
+      padding: 92px 22px 64px;
       text-align: center;
     }
 
+    .hero h1,
+    .section-title {
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
     .hero h1 {
-      font-size: clamp(34px, 8vw, 58px);
-      line-height: 1.4;
-      font-weight: 500;
+      font-size: clamp(34px, 7vw, 58px);
       margin-bottom: 24px;
     }
 
     .hero p {
-      font-size: 17px;
-      color: var(--light-brown);
+      color: var(--soft-text);
+      max-width: 720px;
+      margin: 0 auto;
+      font-size: 15px;
     }
 
-    section {
-      padding: 64px 20px;
-    }
+    section { padding: 58px 22px; }
 
     .container {
-      max-width: 920px;
+      max-width: 940px;
       margin: 0 auto;
     }
 
-    .section-title {
-      text-align: center;
-      font-size: 28px;
-      font-weight: 500;
-      line-height: 1.6;
-      margin-bottom: 32px;
-    }
-
-    .lead {
-      max-width: 720px;
-      margin: 0 auto 32px;
-      text-align: center;
-      font-size: 16px;
-    }
-
     .card {
-      background: var(--white);
+      background: var(--true-white);
       border: 1px solid var(--line);
-      border-radius: 28px;
-      padding: 30px 24px;
-      box-shadow: 0 12px 36px rgba(95, 74, 61, 0.06);
+      border-radius: 32px;
+      padding: 34px 26px;
+      box-shadow: 0 18px 50px rgba(40, 40, 40, 0.05);
+    }
+
+    .section-title {
+      font-size: clamp(26px, 6vw, 40px);
+      margin-bottom: 26px;
+      text-align: center;
+    }
+
+    p {
+      color: var(--soft-text);
+      margin-bottom: 14px;
     }
 
     .list {
       display: grid;
       gap: 14px;
-      max-width: 700px;
+      max-width: 760px;
       margin: 0 auto;
     }
 
     .list li {
       list-style: none;
-      background: var(--white);
+      background: var(--true-white);
       border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 16px 18px;
-    }
-
-    .change-list {
-      display: grid;
-      gap: 22px;
-    }
-
-    .change {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 26px;
-      padding: 26px;
-    }
-
-    .change h3 {
-      font-size: 19px;
-      margin-bottom: 14px;
-      font-weight: 500;
-    }
-
-    .before-after {
-      display: grid;
-      gap: 18px;
-    }
-
-    .label {
-      font-size: 13px;
-      color: var(--light-brown);
-      margin-bottom: 6px;
+      border-radius: 22px;
+      padding: 18px;
+      color: var(--soft-text);
     }
 
     .flow {
       display: grid;
-      gap: 16px;
-      max-width: 680px;
+      gap: 14px;
+      max-width: 720px;
       margin: 0 auto;
     }
 
     .flow-item {
-      background: var(--white);
+      background: var(--true-white);
       border: 1px solid var(--line);
       border-radius: 22px;
       padding: 20px;
+      color: var(--soft-text);
     }
 
     .faq {
       display: grid;
       gap: 18px;
-      max-width: 760px;
+      max-width: 780px;
       margin: 0 auto;
     }
 
     .faq-item {
-      background: var(--white);
+      background: var(--true-white);
       border: 1px solid var(--line);
-      border-radius: 24px;
+      border-radius: 26px;
       padding: 24px;
     }
 
     .faq-item h3 {
       font-size: 17px;
-      font-weight: 500;
       margin-bottom: 10px;
+      font-weight: 600;
     }
 
-    .cta {
+    .change-box {
       text-align: center;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .button-area {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-items: center;
+      margin-top: 28px;
     }
 
     .button {
       display: inline-block;
       width: min(100%, 340px);
-      padding: 16px 24px;
+      padding: 15px 24px;
       border-radius: 999px;
-      background: var(--accent);
-      color: #fffdf8;
-      font-weight: 500;
-      margin-top: 24px;
+      background: var(--orange);
+      color: #fff;
+      font-weight: 600;
+      text-align: center;
     }
 
-    .back {
+    .button.sub {
+      background: var(--true-white);
+      color: var(--orange-dark);
+      border: 1px solid var(--orange-dark);
+    }
+
+    .message {
       text-align: center;
-      padding: 40px 20px 20px;
-      color: var(--light-brown);
-      font-size: 14px;
+      background: var(--true-white);
+      border: 1px solid var(--line);
+      border-radius: 32px;
+      padding: 42px 26px;
     }
 
     footer {
-      padding: 40px 20px;
+      padding: 40px 22px;
       text-align: center;
       font-size: 13px;
-      color: var(--light-brown);
+      color: var(--soft-text);
+      border-top: 1px solid var(--line);
     }
 
     @media (min-width: 760px) {
-      .before-after {
-        grid-template-columns: 1fr 1fr;
+      .nav-links { display: flex; }
+
+      .button-area {
+        flex-direction: row;
+        justify-content: center;
       }
     }
   </style>
@@ -194,22 +219,39 @@
 
 <body>
 
-  <header class="hero">
-    <h1>人生って、<br>もっと楽しくていい。</h1>
-    <p>「こんな私には無理。」<br>そう思っているあなたへ。</p>
+  <header>
+    <nav class="nav">
+      <a class="logo" href="index.html">SHIORI</a>
+      <div class="nav-links">
+        <a href="index.html">HOME</a>
+        <a href="session.html">SESSION</a>
+        <a href="voice.html">VOICE</a>
+        <a href="profile.html">PROFILE</a>
+        <a href="blog.html">BLOG</a>
+      </div>
+    </nav>
   </header>
 
   <main>
 
+    <div class="hero">
+      <h1>心を整理する<br>カードセッション</h1>
+      <p>
+        「こんな私には無理。」<br>
+        そう思っているあなたへ。<br>
+        カードを通して、今の気持ちや本音をやさしく整理していく時間です。
+      </p>
+    </div>
+
     <section>
       <div class="container">
-        <h2 class="section-title">こんなお悩みありませんか？</h2>
+        <h2 class="section-title">こんなお悩み<br>ありませんか？</h2>
         <ul class="list">
-          <li>人の目が気になって、自分の本音を言えない</li>
+          <li>人の目が気になって、本音を言えない</li>
           <li>つい自分を責めてしまう</li>
           <li>本当はどうしたいのか分からない</li>
           <li>頑張っているのに、毎日なんとなく苦しい</li>
-          <li>「こんな私には無理」と思ってしまう</li>
+          <li>「私には無理」と思って、一歩踏み出せない</li>
         </ul>
       </div>
     </section>
@@ -217,16 +259,15 @@
     <section>
       <div class="container">
         <div class="card">
-          <h2 class="section-title">心を整理する<br>カードセッション</h2>
-          <p class="lead">
-            カードセッションは、カードを通して今の気持ちや本音をやさしく整理していく時間です。
+          <h2 class="section-title">カードセッションとは</h2>
+          <p>
+            カードセッションは、占いのように未来を当てるものではありません。
           </p>
           <p>
-            答えを当てるものではなく、あなたの中にある想いや違和感に気づくためのきっかけとして使います。
-            うまく話そうとしなくても大丈夫です。
-            気持ちがまとまっていなくても大丈夫です。
+            カードをきっかけに、今の気持ちや本音を言葉にしていく時間です。
           </p>
           <p>
+            うまく話そうとしなくても大丈夫です。気持ちがまとまっていなくても大丈夫です。
             あなたのペースを大切にしながら、一緒に心の中を整理していきます。
           </p>
         </div>
@@ -235,18 +276,17 @@
 
     <section>
       <div class="container">
-        <h2 class="section-title">私が大切にしていること</h2>
         <div class="card">
+          <h2 class="section-title">大切にしていること</h2>
           <p>
             私は、あなたを無理に変えようとは思っていません。
           </p>
           <p>
-            どんな気持ちにも、ちゃんと理由があります。
             人の目が気になることも、自分を責めてしまうことも、
             それだけ一生懸命に生きてきた証だと思っています。
           </p>
           <p>
-            この時間では、否定せず、急がせず、あなたの中にある本音を一緒に見つけていきます。
+            否定せず、急がせず、あなたの中にある気持ちを一緒に見つけていきます。
           </p>
         </div>
       </div>
@@ -254,66 +294,19 @@
 
     <section>
       <div class="container">
-        <h2 class="section-title">お客様の変化</h2>
-
-        <div class="change-list">
-
-          <div class="change">
-            <h3>30代主婦 Sさん</h3>
-            <div class="before-after">
-              <div>
-                <p class="label">Before</p>
-                <p>自分が何者か分からず、人の顔色を見て過ごす日々。毎日「消えたい」と感じていました。</p>
-              </div>
-              <div>
-                <p class="label">After</p>
-                <p>自分のことが分かるようになり、他人にどう思われるか以外の基準で選べるようになりました。</p>
-              </div>
-            </div>
+        <div class="change-box">
+          <h2 class="section-title">小さな変化の<br>ストーリー</h2>
+          <p>
+            セッションや学びを通して、少しずつ自分の気持ちに気づき、
+            自分の基準で選べるようになった方がいます。
+          </p>
+          <p>
+            変化の形やスピードは人それぞれです。
+            あなたにも、あなたのペースがあります。
+          </p>
+          <div class="button-area">
+            <a class="button sub" href="voice.html">変化のストーリーを見る</a>
           </div>
-
-          <div class="change">
-            <h3>Kさん</h3>
-            <div class="before-after">
-              <div>
-                <p class="label">Before</p>
-                <p>毎日がつまらなく、やりたいことや人生の目標が分からない状態でした。</p>
-              </div>
-              <div>
-                <p class="label">After</p>
-                <p>やりたいことが見つかり、毎日が楽しくなりました。</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="change">
-            <h3>S・Kさん</h3>
-            <div class="before-after">
-              <div>
-                <p class="label">Before</p>
-                <p>周りからのアドバイスを否定されたように感じてしまうことがありました。</p>
-              </div>
-              <div>
-                <p class="label">After</p>
-                <p>アドバイスを前向きに受け取れるようになり、仕事も楽しく感じられるようになりました。</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="change">
-            <h3>Nさん</h3>
-            <div class="before-after">
-              <div>
-                <p class="label">Before</p>
-                <p>親子や家族とのコミュニケーションに悩み、イライラしてしまうことがありました。</p>
-              </div>
-              <div>
-                <p class="label">After</p>
-                <p>子どもや家族との関わり方が変わり、家族との時間を幸せに感じられるようになりました。</p>
-              </div>
-            </div>
-          </div>
-
         </div>
       </div>
     </section>
@@ -336,10 +329,9 @@
         <h2 class="section-title">よくある質問</h2>
 
         <div class="faq">
-
           <div class="faq-item">
             <h3>Q. セッション時間はどれくらいですか？</h3>
-            <p>初回は60〜90分を予定しています。ゆっくりお話を伺いながら進めますので、お時間に余裕を持ってご参加ください。</p>
+            <p>60〜90分を予定しています。ゆっくりお話を伺いながら進めますので、お時間に余裕を持ってご参加ください。</p>
           </div>
 
           <div class="faq-item">
@@ -359,34 +351,32 @@
 
           <div class="faq-item">
             <h3>Q. うまく話せるか不安です。</h3>
-            <p>大丈夫です。最初から上手に話そうとしなくても大丈夫ですし、気持ちがまとまっていなくても大丈夫です。あなたのペースを大切にしながら進めます。</p>
+            <p>大丈夫です。最初から上手に話そうとしなくても大丈夫です。あなたのペースを大切にしながら進めます。</p>
           </div>
-
         </div>
       </div>
     </section>
 
     <section>
-      <div class="container cta">
-        <h2 class="section-title">少し話してみたいと思った方へ</h2>
-        <p class="lead">
-          申し込みフォームからご連絡ください。<br>
-          日程調整のご案内をお送りします。
-        </p>
-       <a class="button" href="https://forms.gle/sMS8G7Cug8dfGhn29" target="_blank" rel="noopener">
-カードセッションに申し込む
-</a>
+      <div class="container">
+        <div class="message">
+          <h2 class="section-title">少し話してみたいと<br>思った方へ</h2>
+          <p>
+            申し込みフォームからご連絡ください。<br>
+            日程調整のご案内をお送りします。
+          </p>
+
+          <div class="button-area">
+            <a class="button" href="https://forms.gle/sMS8G7Cug8dfGhn29" target="_blank" rel="noopener">カードセッションに申し込む</a>
+            <a class="button sub" href="index.html">ホームに戻る</a>
+          </div>
+        </div>
       </div>
     </section>
 
   </main>
 
-  <div class="back">
-    <a href="index.html">トップページへ戻る</a>
-  </div>
-
   <footer>
-    <p>Shiori</p>
     <p>人生って、もっと楽しくていい。</p>
     <p>&copy; 2026 Shiori</p>
   </footer>
