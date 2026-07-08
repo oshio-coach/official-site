@@ -79,39 +79,28 @@
     }
 
     .hero {
-      min-height: 100vh;
-      background:
-        linear-gradient(rgba(20, 24, 32, 0.18), rgba(20, 24, 32, 0.25)),
-        url("hero.jpg") center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 100px 22px 60px;
-      color: #fff;
-    }
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  padding: 120px 22px 70px;
+}
 
-    .hero-inner {
-      max-width: 780px;
-    }
+.hero-inner {
+  max-width: 720px;
+  width: 100%;
+  margin-left: 8%;
+}
 
-    .hero h1 {
-      font-family: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
-      font-size: clamp(40px, 9vw, 76px);
-      line-height: 1.35;
-      font-weight: 400;
-      letter-spacing: 0.08em;
-      margin-bottom: 26px;
-      text-shadow: 0 8px 32px rgba(0, 0, 0, 0.22);
-    }
+.hero h1 {
+  font-size: clamp(38px, 7vw, 70px);
+  line-height: 1.45;
+  letter-spacing: 0.06em;
+  white-space: normal;
+}
 
-    .hero p {
-      font-size: clamp(15px, 3.8vw, 21px);
-      line-height: 2;
-      color: rgba(255, 255, 255, 0.96);
-      margin-bottom: 36px;
-      text-shadow: 0 6px 24px rgba(0, 0, 0, 0.24);
-    }
+.hero p {
+  text-align: left;
+}
 
     .buttons {
       display: flex;
