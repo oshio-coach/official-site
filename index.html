@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Shiori｜<h1>人生って、<br>もっと楽しくていい。</h1>
-  <meta name="description" content="人の目が気になる、自己否定しやすい、「こんな私には無理」と思っている方へ。心を整理するカードセッションと、心を軽くするヒントをお届けします。" />
+  <title>Shiori｜人生って、もっと楽しくていい。</title>
+  <meta name="description" content="「こんな私には無理。」そう思っているあなたへ。心を整理するカードセッションと、心を軽くするヒントをお届けします。" />
 
   <style>
     :root {
@@ -53,11 +53,11 @@
       left: 0;
       width: 100%;
       z-index: 10;
-      padding: 22px 22px;
+      padding: 26px 24px;
     }
 
     .nav {
-      max-width: 1080px;
+      max-width: 1180px;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
@@ -67,46 +67,70 @@
 
     .logo {
       font-size: 15px;
-      letter-spacing: 0.14em;
-      font-weight: 500;
+      letter-spacing: 0.16em;
+      font-weight: 600;
     }
 
     .nav-links {
       display: none;
-      gap: 24px;
+      gap: 26px;
       font-size: 12px;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.18em;
+      font-weight: 600;
     }
 
     .hero {
-  align-items: center;
-  justify-content: flex-start;
-  text-align: left;
-  padding: 120px 22px 70px;
-}
+      min-height: 100vh;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(20, 24, 32, 0.34) 0%,
+          rgba(20, 24, 32, 0.18) 45%,
+          rgba(20, 24, 32, 0.06) 100%
+        ),
+        url("hero.jpg") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 110px 24px 70px;
+      color: #fff;
+    }
 
-.hero-inner {
-  max-width: 720px;
-  width: 100%;
-  margin-left: 8%;
-}
+    .hero-inner {
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
 
-.hero h1 {
-  font-size: clamp(38px, 7vw, 70px);
-  line-height: 1.45;
-  letter-spacing: 0.06em;
-  white-space: normal;
-}
+    .hero-content {
+      max-width: 620px;
+      text-align: left;
+    }
 
-.hero p {
-  text-align: left;
-}
+    .hero h1 {
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+      font-size: clamp(38px, 6.2vw, 72px);
+      line-height: 1.45;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      margin-bottom: 26px;
+      text-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+    }
+
+    .hero p {
+      font-size: clamp(15px, 2.4vw, 20px);
+      line-height: 2;
+      color: rgba(255, 255, 255, 0.96);
+      margin-bottom: 36px;
+      text-shadow: 0 6px 22px rgba(0, 0, 0, 0.24);
+      font-weight: 600;
+    }
 
     .buttons {
       display: flex;
       flex-direction: column;
       gap: 14px;
-      align-items: center;
+      align-items: flex-start;
     }
 
     .button {
@@ -114,18 +138,18 @@
       width: min(100%, 340px);
       padding: 15px 24px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.94);
       color: var(--text);
       font-size: 14px;
-      font-weight: 500;
+      font-weight: 600;
       text-align: center;
       letter-spacing: 0.07em;
     }
 
     .button.sub {
-      background: rgba(37, 37, 37, 0.44);
+      background: rgba(37, 37, 37, 0.42);
       color: #fff;
-      border: 1px solid rgba(255, 255, 255, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.48);
     }
 
     section {
@@ -267,7 +291,6 @@
 
       .buttons {
         flex-direction: row;
-        justify-content: center;
       }
 
       .two-column {
@@ -277,6 +300,29 @@
       .voice-list,
       .hint-list {
         grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 759px) {
+      .hero {
+        background-position: center;
+        padding-top: 100px;
+      }
+
+      .hero-content {
+        max-width: 100%;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .buttons {
+        align-items: stretch;
+      }
+
+      .button {
+        width: 100%;
       }
     }
   </style>
@@ -299,12 +345,14 @@
 
   <section class="hero">
     <div class="hero-inner">
-      <h1>人生って、<br>もっと楽しくていい。</h1>
-      <p>「こんな私には無理。」<br>そう思っているあなたへ。</p>
+      <div class="hero-content">
+        <h1>人生って、<br>もっと楽しくていい。</h1>
+        <p>「こんな私には無理。」<br>そう思っているあなたへ。</p>
 
-      <div class="buttons">
-        <a class="button" href="session.html">心を整理するカードセッションを見る</a>
-        <a class="button sub" href="#hints">心を軽くするヒント集</a>
+        <div class="buttons">
+          <a class="button" href="session.html">心を整理するカードセッションを見る</a>
+          <a class="button sub" href="#hints">心を軽くするヒント集</a>
+        </div>
       </div>
     </div>
   </section>
