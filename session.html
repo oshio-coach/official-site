@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>カードセッション｜Shiori</title>
-  <meta name="description" content="「こんな私には無理。」そう思っているあなたへ。カードを通して心を整理するセッションのご案内です。" />
+  <meta name="description" content="心を整理するカードセッション。答えを探す時間ではなく、本当の気持ちに気づく時間です。" />
 
   <style>
     :root{
@@ -13,31 +13,33 @@
       --text:#2b2926;
       --soft:#6f6a64;
       --line:#e9e1d8;
-      --orange:#dc9559;
-      --orange2:#b9783f;
-      --beige:#f6efe7;
+      --orange:#d58a45;
+      --brown:#7a5537;
     }
 
     *{box-sizing:border-box;margin:0;padding:0}
+
     body{
       font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;
       background:var(--base);
       color:var(--text);
-      line-height:1.95;
+      line-height:1.9;
       letter-spacing:.05em;
     }
+
     a{text-decoration:none;color:inherit}
-    img{width:100%;display:block}
+    img{width:100%;display:block;border-radius:22px}
 
     header{
-      padding:26px 22px;
-      background:rgba(252,251,248,.92);
-      border-bottom:1px solid var(--line);
       position:sticky;
       top:0;
-      z-index:20;
+      z-index:10;
+      background:rgba(252,251,248,.92);
       backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--line);
+      padding:22px;
     }
+
     .nav{
       max-width:1120px;
       margin:auto;
@@ -45,37 +47,62 @@
       justify-content:space-between;
       align-items:center;
     }
+
     .logo{font-weight:700;letter-spacing:.18em;font-size:15px}
-    .nav-links{display:none;gap:24px;font-size:12px;font-weight:700;letter-spacing:.16em}
+
+    .nav-links{
+      display:none;
+      gap:24px;
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.14em;
+    }
 
     .hero{
-      min-height:78vh;
-      background:
-        linear-gradient(90deg,rgba(255,255,255,.92),rgba(255,255,255,.66),rgba(255,255,255,.18)),
-        url("hero.jpg") center/cover no-repeat;
-      display:flex;
-      align-items:center;
-      padding:90px 22px;
+      padding:64px 22px 48px;
     }
-    .hero-inner{max-width:1120px;margin:auto;width:100%}
-    .hero-text{max-width:620px}
-    .eyebrow{color:var(--orange2);font-size:13px;font-weight:700;letter-spacing:.18em;margin-bottom:18px}
+
+    .hero-wrap{
+      max-width:1120px;
+      margin:auto;
+      display:grid;
+      gap:34px;
+      align-items:center;
+    }
+
+    .eyebrow{
+      color:var(--orange);
+      font-size:13px;
+      font-weight:700;
+      letter-spacing:.18em;
+      margin-bottom:18px;
+    }
+
     h1,h2{
       font-family:"Hiragino Mincho ProN","Yu Mincho",serif;
       font-weight:400;
       line-height:1.55;
     }
-    h1{font-size:clamp(34px,6vw,62px);margin-bottom:24px}
-    .hero p{color:var(--soft);font-size:16px;margin-bottom:30px}
 
-    section{padding:78px 22px}
-    .container{max-width:1080px;margin:auto}
-    .section-head{margin-bottom:34px}
-    .num{color:var(--orange);font-family:serif;font-size:34px;margin-bottom:10px}
-    h2{font-size:clamp(28px,5vw,44px)}
-    .lead{max-width:720px;color:var(--soft);margin-top:18px}
+    h1{
+      font-size:clamp(34px,7vw,64px);
+      margin-bottom:22px;
+    }
 
-    .btns{display:flex;flex-direction:column;gap:14px;margin-top:28px}
+    h2{
+      font-size:clamp(28px,5vw,42px);
+      margin-bottom:22px;
+    }
+
+    p{color:var(--soft);margin-bottom:14px}
+
+    .btns{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      margin-top:26px;
+    }
+
     .btn{
       display:inline-block;
       width:min(100%,340px);
@@ -86,95 +113,124 @@
       background:var(--orange);
       color:#fff;
     }
+
     .btn.sub{
-      background:rgba(255,255,255,.72);
-      color:var(--orange2);
-      border:1px solid var(--orange2);
+      background:var(--white);
+      color:var(--brown);
+      border:1px solid var(--brown);
     }
 
-    .worry-grid{
-      display:grid;
-      gap:16px;
-      grid-template-columns:1fr;
+    section{padding:62px 22px}
+
+    .container{
+      max-width:1120px;
+      margin:auto;
     }
+
+    .section-grid{
+      display:grid;
+      gap:28px;
+      align-items:center;
+      border-top:1px solid var(--line);
+      padding-top:46px;
+    }
+
+    .num{
+      color:var(--orange);
+      font-family:serif;
+      font-size:34px;
+      margin-bottom:8px;
+    }
+
+    .text-block{
+      max-width:520px;
+    }
+
+    .image-box img{
+      box-shadow:0 18px 48px rgba(40,40,40,.08);
+    }
+
+    .worries{
+      display:grid;
+      gap:14px;
+      margin-top:26px;
+    }
+
     .worry{
       background:var(--white);
       border:1px solid var(--line);
-      border-radius:28px;
-      padding:24px;
-      box-shadow:0 18px 48px rgba(40,40,40,.04);
+      border-radius:22px;
+      padding:18px;
+      color:var(--soft);
     }
-    .worry span{
-      display:block;
-      color:var(--orange);
-      font-size:26px;
-      margin-bottom:10px;
-    }
-    .worry p{color:var(--soft)}
 
-    .split{
+    .dawn{
+      background:
+        linear-gradient(rgba(255,255,255,.58),rgba(255,255,255,.58)),
+        url("hero.jpg") center/cover no-repeat;
+      text-align:center;
+      padding:86px 22px;
+    }
+
+    .dawn p{
+      max-width:680px;
+      margin:18px auto 0;
+    }
+
+    .voice-cards{
       display:grid;
-      gap:36px;
-      align-items:center;
+      gap:16px;
+      margin-top:28px;
     }
-    .photo-box{
-      min-height:340px;
-      border-radius:34px;
-      background:
-        linear-gradient(rgba(255,255,255,.1),rgba(255,255,255,.2)),
-        url("hero.jpg") center/cover no-repeat;
-      box-shadow:0 20px 60px rgba(40,40,40,.08);
-    }
-    .card{
+
+    .voice-card{
       background:var(--white);
       border:1px solid var(--line);
-      border-radius:34px;
-      padding:34px 26px;
-      box-shadow:0 18px 48px rgba(40,40,40,.05);
+      border-radius:22px;
+      overflow:hidden;
     }
-    .card p{color:var(--soft);margin-bottom:14px}
 
-    .dawn-band{
-      background:
-        linear-gradient(rgba(255,255,255,.55),rgba(255,255,255,.55)),
-        url("hero.jpg") center/cover no-repeat;
-      text-align:center;
-      padding:92px 22px;
+    .voice-card img{
+      border-radius:0;
+      aspect-ratio: 4 / 3;
+      object-fit:cover;
     }
-    .dawn-band p{max-width:680px;margin:22px auto 0;color:var(--soft)}
 
-    .story-card{
+    .voice-card p{
+      padding:16px;
+      font-size:14px;
+      margin:0;
+    }
+
+    .faq{
+      display:grid;
+      gap:14px;
+      margin-top:24px;
+    }
+
+    .faq-item{
       background:var(--white);
       border:1px solid var(--line);
-      border-radius:34px;
-      padding:38px 26px;
-      text-align:center;
+      border-radius:22px;
+      padding:20px;
     }
-    .story-card p{color:var(--soft);max-width:720px;margin:0 auto 16px}
 
-    .flow,.faq{display:grid;gap:16px}
-    .flow-item,.faq-item{
-      background:var(--white);
-      border:1px solid var(--line);
-      border-radius:26px;
-      padding:22px;
+    .faq-item h3{
+      font-size:16px;
+      margin-bottom:8px;
     }
-    .flow-item{color:var(--soft)}
-    .faq-item h3{font-size:17px;margin-bottom:8px}
-    .faq-item p{color:var(--soft)}
 
     .final{
       background:var(--white);
       border:1px solid var(--line);
-      border-radius:36px;
-      padding:48px 26px;
+      border-radius:30px;
+      padding:38px 24px;
       text-align:center;
       box-shadow:0 18px 48px rgba(40,40,40,.05);
     }
-    .final p{color:var(--soft)}
 
     footer{
-      padding:42px 22px;
+      padding:40px 22px;
       text-align:center;
       color:var(--soft);
       font-size:13px;
@@ -183,10 +239,21 @@
 
     @media(min-width:760px){
       .nav-links{display:flex}
+      .hero-wrap{grid-template-columns:0.9fr 1.1fr}
+      .section-grid{grid-template-columns:0.9fr 1.1fr}
+      .section-grid.reverse{grid-template-columns:1.1fr 0.9fr}
       .btns{flex-direction:row}
-      .worry-grid{grid-template-columns:repeat(5,1fr)}
-      .split{grid-template-columns:1fr 1fr}
-      .flow{grid-template-columns:repeat(5,1fr)}
+      .worries{grid-template-columns:repeat(5,1fr)}
+      .voice-cards{grid-template-columns:repeat(4,1fr)}
+    }
+
+    @media(max-width:759px){
+      .hero{padding-top:48px}
+      section{padding:52px 20px}
+      .section-grid{padding-top:38px}
+      .worry{font-size:14px}
+      .image-box img{max-height:260px;object-fit:cover}
+      .voice-card img{aspect-ratio:16 / 10}
     }
   </style>
 </head>
@@ -209,151 +276,108 @@
 <main>
 
   <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
+    <div class="hero-wrap">
+      <div>
         <div class="eyebrow">CARD SESSION</div>
         <h1>心を整理する<br>カードセッション</h1>
-        <p>
-          答えを探す時間ではなく、<br>
-          本当の気持ちに気づく時間。
-        </p>
+        <p>答えを探す時間ではなく、<br>本当の気持ちに気づく時間。</p>
         <div class="btns">
           <a class="btn" href="https://forms.gle/sMS8G7Cug8dfGhn29" target="_blank" rel="noopener">カードセッションに申し込む</a>
           <a class="btn sub" href="index.html">ホームに戻る</a>
         </div>
       </div>
+      <div class="image-box">
+        <img src="session-card.jpg" alt="カードセッションのイメージ">
+      </div>
     </div>
   </section>
 
   <section>
     <div class="container">
-      <div class="section-head">
-        <div class="num">01</div>
-        <h2>こんなこと、<br>ありませんか？</h2>
-      </div>
-
-      <div class="worry-grid">
-        <div class="worry"><span>○</span><p>人の目が気になって、本音を言えない</p></div>
-        <div class="worry"><span>○</span><p>つい自分を責めてしまう</p></div>
-        <div class="worry"><span>○</span><p>本当はどうしたいのか分からない</p></div>
-        <div class="worry"><span>○</span><p>頑張っているのに、毎日なんとなく苦しい</p></div>
-        <div class="worry"><span>○</span><p>「私には無理」と思って、一歩踏み出せない</p></div>
+      <div class="section-grid">
+        <div class="text-block">
+          <div class="num">01</div>
+          <h2>こんなこと、<br>ありませんか？</h2>
+        </div>
+        <div class="worries">
+          <div class="worry">人の目が気になって、本音を言えない</div>
+          <div class="worry">つい自分を責めてしまう</div>
+          <div class="worry">本当はどうしたいのか分からない</div>
+          <div class="worry">毎日なんとなく苦しい</div>
+          <div class="worry">「私には無理」と思ってしまう</div>
+        </div>
       </div>
     </div>
   </section>
 
   <section>
-    <div class="container split">
-      <div class="card">
+    <div class="container section-grid reverse">
+      <div class="image-box">
+        <img src="hero.jpg" alt="夜明けのイメージ">
+      </div>
+      <div class="text-block">
         <div class="num">02</div>
         <h2>私は、あなたを<br>変えたいわけではありません。</h2>
-        <p>
-          頑張りすぎてしまうこと。人の目が気になること。断れないこと。
-        </p>
-        <p>
-          それは弱さではなく、これまで一生懸命に生きてきた証だと思っています。
-        </p>
-        <p>
-          否定せず、急がせず、あなたの気持ちに寄り添いながら、一緒に整理していきます。
-        </p>
+        <p>頑張りすぎてしまうこと。人の目が気になること。断れないこと。</p>
+        <p>それは弱さではなく、これまで一生懸命に生きてきた証だと思っています。</p>
+        <p>否定せず、急がせず、あなたの気持ちを一緒に整理していきます。</p>
       </div>
-      <div class="photo-box"></div>
     </div>
   </section>
 
   <section>
-    <div class="container split">
-      <div class="photo-box"></div>
-      <div class="card">
+    <div class="container section-grid">
+      <div class="text-block">
         <div class="num">03</div>
         <h2>カードセッションとは</h2>
-        <p>
-          カードセッションは、占いのように未来を当てるものではありません。
-        </p>
-        <p>
-          カードをきっかけに、今の気持ちや本音を言葉にしていく時間です。
-        </p>
-        <p>
-          うまく話そうとしなくても大丈夫。気持ちがまとまっていなくても大丈夫です。
-        </p>
+        <p>占いのように未来を当てるものではありません。</p>
+        <p>カードをきっかけに、今の気持ちや本音を言葉にしていく時間です。</p>
+        <p>うまく話そうとしなくても大丈夫。あなたのペースで進めます。</p>
+      </div>
+      <div class="image-box">
+        <img src="session-card.jpg" alt="カードとノートの写真">
       </div>
     </div>
   </section>
 
-  <section class="dawn-band">
+  <section class="dawn">
     <div class="container">
       <div class="num">04</div>
       <h2>夜明けって、<br>急には来ません。</h2>
-      <p>
-        少しずつ空が明るくなるように、心も少しずつ変わっていきます。
-        焦らなくて大丈夫。あなたのペースで、大丈夫です。
-      </p>
+      <p>少しずつ空が明るくなるように、心も少しずつ変わっていきます。焦らなくて大丈夫。あなたのペースで、大丈夫です。</p>
     </div>
   </section>
 
   <section>
     <div class="container">
-      <div class="story-card">
-        <div class="num">05</div>
-        <h2>小さな変化の<br>ストーリー</h2>
-        <p>
-          セッションや学びを通して、自分の気持ちに気づき、
-          少しずつ自分の基準で選べるようになった方がいます。
-        </p>
-        <p>
-          変化の形やスピードは人それぞれです。
-        </p>
-        <div class="btns" style="justify-content:center;">
-          <a class="btn sub" href="voice.html">変化のストーリーを見る</a>
-        </div>
-      </div>
-    </div>
-  </section>
+      <div class="num">05</div>
+      <h2>小さな変化の<br>ストーリー</h2>
+      <p>セッションや学びを通して、少しずつ自分の気持ちに気づいた方がいます。</p>
 
-  <section>
-    <div class="container">
-      <div class="section-head">
-        <div class="num">06</div>
-        <h2>セッションの流れ</h2>
+      <div class="voice-cards">
+        <div class="voice-card"><img src="voice1.png" alt=""><p>自分の気持ちを大切にできるように。</p></div>
+        <div class="voice-card"><img src="voice2.png" alt=""><p>仕事や人間関係が少し楽に。</p></div>
+        <div class="voice-card"><img src="voice3.png" alt=""><p>家族との時間があたたかく。</p></div>
+        <div class="voice-card"><img src="voice4.png" alt=""><p>自分のペースを選べるように。</p></div>
       </div>
-      <div class="flow">
-        <div class="flow-item">1. Googleフォームからお申し込み</div>
-        <div class="flow-item">2. 日程調整のご連絡</div>
-        <div class="flow-item">3. Google MeetのURLをお送りします</div>
-        <div class="flow-item">4. オンラインでセッション</div>
-        <div class="flow-item">5. 60〜90分ほどで終了</div>
+
+      <div class="btns">
+        <a class="btn sub" href="voice.html">変化のストーリーを見る</a>
       </div>
     </div>
   </section>
 
   <section>
     <div class="container">
-      <div class="section-head">
-        <div class="num">07</div>
-        <h2>よくあるご質問</h2>
-      </div>
+      <div class="num">06</div>
+      <h2>よくあるご質問</h2>
 
       <div class="faq">
-        <div class="faq-item">
-          <h3>Q. セッション時間はどれくらいですか？</h3>
-          <p>60〜90分を予定しています。お時間に余裕を持ってご参加ください。</p>
-        </div>
-        <div class="faq-item">
-          <h3>Q. オンラインですか？</h3>
-          <p>はい。Google Meetを使ったオンラインセッションです。</p>
-        </div>
-        <div class="faq-item">
-          <h3>Q. どんな人が受けていますか？</h3>
-          <p>人の目が気になる、自己否定してしまう、自分の気持ちが分からない方が多く受けられています。</p>
-        </div>
-        <div class="faq-item">
-          <h3>Q. 申し込み後の流れを教えてください。</h3>
-          <p>フォーム送信後、日程調整のご連絡をお送りします。</p>
-        </div>
-        <div class="faq-item">
-          <h3>Q. うまく話せるか不安です。</h3>
-          <p>大丈夫です。あなたのペースを大切にしながら進めます。</p>
-        </div>
+        <div class="faq-item"><h3>Q. セッション時間はどれくらいですか？</h3><p>60〜90分を予定しています。</p></div>
+        <div class="faq-item"><h3>Q. オンラインですか？</h3><p>はい。Google Meetを使ったオンラインセッションです。</p></div>
+        <div class="faq-item"><h3>Q. どんな人が受けていますか？</h3><p>人の目が気になる、自己否定してしまう、自分の気持ちが分からない方が多く受けられています。</p></div>
+        <div class="faq-item"><h3>Q. 申し込み後の流れは？</h3><p>フォーム送信後、日程調整のご連絡をお送りします。</p></div>
+        <div class="faq-item"><h3>Q. うまく話せるか不安です。</h3><p>大丈夫です。あなたのペースを大切にしながら進めます。</p></div>
       </div>
     </div>
   </section>
@@ -361,11 +385,8 @@
   <section>
     <div class="container">
       <div class="final">
-        <h2>少し話してみたいと<br>思ったあなたへ</h2>
-        <p>
-          申し込みフォームからご連絡ください。<br>
-          日程調整のご案内をお送りします。
-        </p>
+        <h2>少し話してみたい。<br>そう思ったあなたへ。</h2>
+        <p>申し込みフォームからご連絡ください。日程調整のご案内をお送りします。</p>
         <div class="btns" style="justify-content:center;">
           <a class="btn" href="https://forms.gle/sMS8G7Cug8dfGhn29" target="_blank" rel="noopener">カードセッションに申し込む</a>
           <a class="btn sub" href="index.html">ホームに戻る</a>
