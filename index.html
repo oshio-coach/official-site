@@ -44,7 +44,7 @@
     .hero {
       min-height: 100vh;
       background:
-        linear-gradient(rgba(70, 50, 35, 0.28), rgba(70, 50, 35, 0.28)),
+        linear-gradient(rgba(70, 50, 35, 0.30), rgba(70, 50, 35, 0.30)),
         url("hero.jpg") center/cover no-repeat;
       display: flex;
       align-items: center;
@@ -55,7 +55,7 @@
     }
 
     .hero-inner {
-      max-width: 720px;
+      max-width: 760px;
     }
 
     .hero h1 {
@@ -78,13 +78,15 @@
     }
 
     .button {
-      width: min(100%, 320px);
+      display: inline-block;
+      width: min(100%, 340px);
       padding: 15px 24px;
       border-radius: 999px;
-      background: rgba(255, 253, 248, 0.92);
+      background: rgba(255, 253, 248, 0.94);
       color: var(--brown);
       font-size: 15px;
       font-weight: 500;
+      text-align: center;
     }
 
     .button.sub {
@@ -112,7 +114,7 @@
 
     .lead {
       text-align: center;
-      max-width: 680px;
+      max-width: 700px;
       margin: 0 auto 36px;
       font-size: 16px;
     }
@@ -128,7 +130,7 @@
     .worries {
       display: grid;
       gap: 14px;
-      max-width: 700px;
+      max-width: 720px;
       margin: 0 auto;
     }
 
@@ -165,6 +167,14 @@
       padding: 24px;
     }
 
+    .small-link {
+      display: inline-block;
+      margin-top: 20px;
+      color: var(--light-brown);
+      border-bottom: 1px solid var(--light-brown);
+      font-size: 14px;
+    }
+
     .links {
       display: grid;
       gap: 16px;
@@ -186,8 +196,7 @@
     }
 
     .cta .button {
-      display: inline-block;
-      margin-top: 20px;
+      margin-top: 22px;
       background: var(--accent);
       color: #fffdf8;
     }
@@ -235,7 +244,7 @@
 
     <section id="worries">
       <div class="container">
-        <h2 class="section-title">こんな毎日ではありませんか</h2>
+        <h2 class="section-title">こんなお悩みありませんか？</h2>
         <ul class="worries">
           <li>人の目が気になって、やりたいことを我慢してしまう</li>
           <li>本当は疲れているのに「大丈夫」と言ってしまう</li>
@@ -248,16 +257,18 @@
 
     <section id="session">
       <div class="container">
-        <div class="card">
-          <h2 class="section-title">心を整理する時間<br>カードセッション</h2>
+        <div class="card cta">
+          <h2 class="section-title">心を整理する<br>カードセッション</h2>
           <p class="lead">
-            カードを通して、今の気持ちや本音をやさしく見つめる時間です。
-            答えを押しつけるのではなく、あなたの中にある想いを一緒に整理していきます。
+            カードを通して、今の気持ちや本音をやさしく整理していく時間です。
+            「カードって何？」と思った方も大丈夫。
+            答えを当てるものではなく、自分の中にある想いに気づくためのきっかけとして使います。
           </p>
-          <div class="cta">
-            <p>「私、本当はどうしたいんだろう？」と思ったときに、安心して話せる場所として使ってください。</p>
-            <a class="button" href="#line">公式LINEから相談する</a>
-          </div>
+          <p>
+            うまく話そうとしなくても大丈夫です。
+            あなたのペースを大切にしながら、一緒に心の中を整理していきます。
+          </p>
+          <a class="button" href="session.html">カードセッションの詳細を見る</a>
         </div>
       </div>
     </section>
@@ -270,27 +281,37 @@
         <div>
           <h2 class="section-title" style="text-align:left;">プロフィール</h2>
           <p>
-            はじめまして、しおりです。<br>
+            はじめまして、Shioriです。<br>
             かつての私は、人の目を気にして、自分の気持ちよりも周りを優先していました。
           </p>
           <p>
-            でも、心の仕組みを学び、自分と向き合う時間を重ねる中で、
+            でも、自分と向き合う時間を重ねる中で、
             「人生って、もっと楽しくていい」と思えるようになりました。
           </p>
           <p>
             今は、同じように生きづらさを抱える方が、自分らしく一歩踏み出せるようサポートしています。
           </p>
+          <a class="small-link" href="profile.html">プロフィールを詳しく見る</a>
         </div>
       </div>
     </section>
 
     <section id="voices">
       <div class="container">
-        <h2 class="section-title">お客様の声</h2>
+        <h2 class="section-title">お客様の変化</h2>
         <div class="voice-list">
-          <div class="voice">自分の気持ちを言葉にできて、心が軽くなりました。</div>
-          <div class="voice">責められることなく話せて、安心できました。</div>
-          <div class="voice">小さな一歩を踏み出してみようと思えました。</div>
+          <div class="voice">
+            「他人にどう思われるか」以外の基準で、選べるようになりました。
+          </div>
+          <div class="voice">
+            やりたいことが見つかり、毎日が楽しくなりました。
+          </div>
+          <div class="voice">
+            家族との関わり方が変わり、幸せを感じられるようになりました。
+          </div>
+        </div>
+        <div class="cta">
+          <a class="small-link" href="voice.html">お客様の変化をもっと見る</a>
         </div>
       </div>
     </section>
@@ -317,6 +338,10 @@
             <p>すぐに答えず「少し考えてから返事します」と言っても大丈夫。</p>
           </div>
         </div>
+
+        <div class="cta">
+          <a class="small-link" href="blog.html">ヒント集を見る</a>
+        </div>
       </div>
     </section>
 
@@ -324,9 +349,10 @@
       <div class="container">
         <h2 class="section-title">つながる場所</h2>
         <div class="links">
-          <a class="link-box" href="#" target="_blank">Instagram</a>
-          <a class="link-box" href="#" target="_blank">stand.fm</a>
-          <a class="link-box" id="line" href="#" target="_blank">公式LINE</a>
+          <a class="link-box" href="https://www.instagram.com/shiori_hsp?igsh=NHR4eWxoYzh5bTF4&utm_source=qr" target="_blank" rel="noopener">Instagram</a>
+          <a class="link-box" href="https://stand.fm/channels/697af9be0a33ca975863faef" target="_blank" rel="noopener">stand.fm</a>
+          <a class="link-box" href="https://www.ameba.jp/profile/general/nashiori/?account_block_token=mtLXlDZLJ5OA0EFDS7y3C6Cu5a1EPvS8" target="_blank" rel="noopener">Amebaブログ</a>
+          <a class="link-box" href="https://lin.ee/DKGG7Zc" target="_blank" rel="noopener">公式LINE</a>
         </div>
       </div>
     </section>
